@@ -20,6 +20,28 @@ public class Employee {
 	private Integer employeeId;
 
 	private String name;
+	
+	private String email;
+	
+	private Company company;
+
+	
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -40,7 +62,9 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", name=" + name + "]";
+		return "Employee [employeeId=" + employeeId + ", name=" + name + ", email=" + email + "]";
 	}
+
+
 
 }

@@ -19,16 +19,19 @@ public class EmployeeTest {
 
 		System.out.println("Starting Transaction");
 		entityManager.getTransaction().begin();
-		Employee employee = new Employee();
+		/*Employee employee = new Employee();
 		employee.setName("Zoniaina M.");
-		employee.setEmployeeId(4);
-		entityManager.persist(employee);
+		employee.setEmployeeId(4);*/
+		Employee emp = entityManager.find(Employee.class, 4);
+		emp.setEmail("zou@gmail.com");
+		entityManager.persist(emp);
 		entityManager.getTransaction().commit();
-		System.out.println("Result Employee ID = " + employee.getEmployeeId() + "et son nom:  " + employee.getName());
+		System.out.println("Result Employee ID = " + emp.getEmployeeId() + " et son nom:  " + emp.getName()+ "avec son email:" + emp.getEmail());
 
-/*		// get an object using primary key.
-		Employee emp = entityManager.find(Employee.class, employee.getEmployeeId());
-		System.out.println("Got Employee " + emp.getName() .+ " " + emp.getEmployeeId());*/
+		// get an object using primary key.
+		//Employee emp = entityManager.find(Employee.class, 4);
+		//System.out.println(emp);
+		//System.out.println("Got Employee " + emp.getName() + " " + emp.getEmployeeId());
 
 		/*// get all the objects from Employee table
 		@SuppressWarnings("unchecked")
